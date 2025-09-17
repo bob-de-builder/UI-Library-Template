@@ -1,4 +1,4 @@
-name: Version and Tag
+name: Push Tag
 
 on:
   push:

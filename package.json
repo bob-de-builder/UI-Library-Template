@@ -9,7 +9,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo check-types",
     "prepare": "husky",
-    "changeset:gen": "npx changeset"
+    "version": "changeset version"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
