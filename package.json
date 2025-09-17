@@ -8,9 +8,11 @@
     "lint:fix": "turbo lint:fix --",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo check-types",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset:gen": "npx changeset"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "eslint": "^9.34.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
