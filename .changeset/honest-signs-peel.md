@@ -1,5 +1,5 @@
 ---
-"@bob/ui": patch
+"@bob-ui/ui": patch
 ---
 
 Test

@@ -1,8 +1,8 @@
 ---
 "docs": patch
-"@bob/eslint-config": patch
-"@bob/typescript-config": patch
-"@bob/ui": patch
+"@bob-ui/eslint-config": patch
+"@bob-ui/typescript-config": patch
+"@bob-ui/ui": patch
 ---
 
 test1

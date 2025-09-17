@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Code } from '@bob/ui';
+import { Button, Code } from '@bob-ui/ui';
 import { useState } from 'react';
 
 export default function WelcomePage() {
@@ -108,10 +108,10 @@ export default function WelcomePage() {
                     </div>
                     <Code language="bash">
                       {packageManager === 'npm'
-                        ? 'npm install @bob/ui'
+                        ? 'npm install @bob-ui/ui'
                         : packageManager === 'pnpm'
-                          ? 'pnpm add @bob/ui'
-                          : 'yarn add @bob/ui'}
+                          ? 'pnpm add @bob-ui/ui'
+                          : 'yarn add @bob-ui/ui'}
                     </Code>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function WelcomePage() {
                     file or main entry point:
                   </p>
                   <Code language="css">
-                    @import &quot;@bob/ui/dist/output.css&quot;;
+                    @import &quot;@bob-ui/ui/dist/output.css&quot;;
                   </Code>
                 </div>
 
@@ -177,7 +177,7 @@ export default function WelcomePage() {
                     Import and use Bob UI components in your React application:
                   </p>
                   <Code language="typescript">
-                    {`import { Button, Card } from "@bob/ui";
+                    {`import { Button, Card } from "@bob-ui/ui";
 
 function App() {
   return (
@@ -281,7 +281,7 @@ pnpm dev --filter=docs`}
 pnpm build
 
 # Build only UI library
-pnpm build --filter=@bob/ui`}
+pnpm build --filter=@bob-ui/ui`}
                   </Code>
                 </div>
               </div>
@@ -336,7 +336,7 @@ pnpm build --filter=@bob/ui`}
           </p>
           <div className="mb-6">
             <Code language="typescript">
-              {`import { Button, Card } from '@bob/ui';
+              {`import { Button, Card } from '@bob-ui/ui';
 
 function App() {
   return (
