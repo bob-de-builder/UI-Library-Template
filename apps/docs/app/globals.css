@@ -1,28 +1,27 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @import 'nextra-theme-docs/style.css';
-
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --purple-900: #1F0444;
-  --purple-800: #2B0660;
+  --purple-900: #1f0444;
+  --purple-800: #2b0660;
   --purple-700: #410891;
-  --purple-600: #570BC1;
-  --purple-500: #600CD4;
-  --purple-400: #8A3EF4;
-  --purple-300: #A76EF7;
-  --purple-200: #C49FF9;
-  --purple-100: #E2CFFC;
-  --purple-50: #F0E7FE;
+  --purple-600: #570bc1;
+  --purple-500: #600cd4;
+  --purple-400: #8a3ef4;
+  --purple-300: #a76ef7;
+  --purple-200: #c49ff9;
+  --purple-100: #e2cffc;
+  --purple-50: #f0e7fe;
 
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;
   --color-secondary-200: #e2e8f0;
   --color-secondary-300: #cbd5e1;
   --color-secondary-400: #94a3b8;
-  --color-secondary-500: #F0AB20;
-  --color-secondary-600: #D69A1C;
+  --color-secondary-500: #f0ab20;
+  --color-secondary-600: #d69a1c;
   --color-secondary-700: #334155;
   --color-secondary-800: #1e293b;
   --color-secondary-900: #0f172a;

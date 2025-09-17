@@ -2,13 +2,13 @@
 
 <p> Buttons with various variants </p>
 
-import { Tabs } from "nextra/components";
+import { Tabs } from 'nextra/components';
 import {
   SecondaryButton,
   PrimaryButton,
   OutlinedButton,
   DangerdButton,
-} from "@/components/button";
+} from '@/components/button';
 
 ## Secondary Button
 
@@ -163,14 +163,14 @@ export const DangerdButton = (): JSX.Element => {
 
 The `Button` component extends `React.ButtonHTMLAttributes<HTMLButtonElement>` as well as additional props for customization.
 
-| **Name**    | **Type**                                               | **Description**                                                                              | **Default**           |
-| ----------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------- | --------------------- |
-| `intent`    | `'primary' \| 'secondary' \| 'outline' \| 'danger'`   | intent style of the button.                                                                 | `primary`             |
-| `size`      | `'sm' \| 'md' \| 'lg'`                                 | size of the button.                                                                          | `'md'`                |
-| `asChild`   | `boolean`                                              | If true, the button will render as a different component, specified in the `Slot` component. | `false`               |
-| `isLoading` | `boolean`                                              | If true, displays a loading spinner inside the button.                                       | `false`               |
-| `leftNode`  | `React.ReactNode`                                      | Element(s) to be displayed before the button content.                                        | `-`                   |
-| `rightNode` | `React.ReactNode`                                      | Element(s) to be displayed after the button content.                                         | `-`                   |
-| `className` | `string`                                               | Additional classnames to be applied to the button.                                           | `-`                   |
-| `disabled`  | `boolean`                                              | If true, disables the button.                                                                | `false`               |
-| `children`  | `React.ReactNode`                                      | The content of the button.                                                                   | `-`                   |
+| **Name**    | **Type**                                            | **Description**                                                                              | **Default** |
+| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------- |
+| `intent`    | `'primary' \| 'secondary' \| 'outline' \| 'danger'` | intent style of the button.                                                                  | `primary`   |
+| `size`      | `'sm' \| 'md' \| 'lg'`                              | size of the button.                                                                          | `'md'`      |
+| `asChild`   | `boolean`                                           | If true, the button will render as a different component, specified in the `Slot` component. | `false`     |
+| `isLoading` | `boolean`                                           | If true, displays a loading spinner inside the button.                                       | `false`     |
+| `leftNode`  | `React.ReactNode`                                   | Element(s) to be displayed before the button content.                                        | `-`         |
+| `rightNode` | `React.ReactNode`                                   | Element(s) to be displayed after the button content.                                         | `-`         |
+| `className` | `string`                                            | Additional classnames to be applied to the button.                                           | `-`         |
+| `disabled`  | `boolean`                                           | If true, disables the button.                                                                | `false`     |
+| `children`  | `React.ReactNode`                                   | The content of the button.                                                                   | `-`         |

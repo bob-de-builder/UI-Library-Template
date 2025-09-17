@@ -1,10 +1,14 @@
 {
   "name": "my-turbo-monorepo-library-template",
   "private": true,
+  "author": {
+    "name": "Godswill Ezeala",
+    "url": "https://bobthebuilder.tech"
+  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
+    "lint": "turbo lint --",
     "lint:fix": "turbo lint:fix --",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo check-types",
@@ -29,6 +33,6 @@
     "packages/*"
   ],
   "lint-staged": {
-    "*.{js,ts,tsx,json,md,css}": "pnpm run lint:fix"
+    "*.{js,ts,tsx,json,md,css}": "pnpm lint"
   }
 }

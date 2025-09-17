@@ -1,6 +1,6 @@
 export default {
   index: {
-    title: "Introduction",
+    title: 'Introduction',
   },
   // installation: "Installation",
   // components: "Components",

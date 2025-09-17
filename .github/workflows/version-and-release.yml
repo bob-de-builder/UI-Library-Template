@@ -17,6 +17,8 @@ jobs:
         uses: ./.github/actions/install
         with:
           packages_token: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: pnpm build --filter=@bobs-ui/ui
 
@@ -27,14 +29,27 @@ jobs:
 
       - name: Version packages
         run: |
-         if pnpm changeset version | grep 'No unreleased changesets'; then
+          if pnpm changeset version | grep -q 'No unreleased changesets'; then
             echo "✅ No changesets to version. Skipping..."
             exit 0
           fi
           echo "🚀 Changesets found. Running version script..."
-          pnpm version
+          pnpm changeset version
+
+      - name: Commit and push version changes
+        run: |
+          git add .
+          git commit -m "chore: version packages [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         run: pnpm changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push tags
+        run: git push --follow-tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
