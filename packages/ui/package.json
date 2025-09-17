@@ -15,6 +15,9 @@
       "require": "./dist/output.css"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "tsc --noEmit &&  prettier --check ./src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix src && prettier --write src",
