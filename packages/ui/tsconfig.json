@@ -1,5 +1,5 @@
 {
-  "extends": "@bob/typescript-config/react-library.json",
+  "extends": "@bob-ui/typescript-config/react-library.json",
   "include": ["src"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
