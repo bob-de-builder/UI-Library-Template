@@ -1,6 +1,10 @@
 {
   "name": "my-turbo-monorepo-library-template",
   "private": true,
+  "author": {
+    "name": "Godswill Ezeala",
+    "url": "https://bobthebuilder.tech"
+  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",

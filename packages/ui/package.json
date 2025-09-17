@@ -1,5 +1,9 @@
 {
   "name": "@bobs-ui/ui",
+  "author": {
+    "name": "Godswill Ezeala",
+    "url": "https://bobthebuilder.tech"
+  },
   "version": "0.0.0",
   "private": false,
   "import": "./dist/index.mjs",
