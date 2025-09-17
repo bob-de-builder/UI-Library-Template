@@ -18,7 +18,7 @@ jobs:
         with:
           packages_token: ${{ secrets.NPM_TOKEN }}
 
-      - run: pnpm build --filter=ui
+      - run: pnpm build --filter=@bob/ui
 
       - name: Configure Git user
         run: |
