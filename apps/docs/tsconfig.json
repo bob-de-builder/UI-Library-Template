@@ -1,5 +1,5 @@
 {
-  "extends": "@bob-ui/typescript-config/nextjs.json",
+  "extends": "@bobs-ui/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

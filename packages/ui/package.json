@@ -1,5 +1,5 @@
 {
-  "name": "@bob-ui/ui",
+  "name": "@bobs-ui/ui",
   "version": "0.0.0",
   "private": false,
   "import": "./dist/index.mjs",
@@ -28,8 +28,8 @@
     "dev": "concurrently \"pnpm build-fast\" \"pnpm dev:style\""
   },
   "devDependencies": {
-    "@bob-ui/eslint-config": "workspace:*",
-    "@bob-ui/typescript-config": "workspace:*",
+    "@bobs-ui/eslint-config": "workspace:*",
+    "@bobs-ui/typescript-config": "workspace:*",
     "@tailwindcss/cli": "^4.1.12",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",

@@ -12,7 +12,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@bob-ui/ui": "workspace:*",
+    "@bobs-ui/ui": "workspace:*",
     "@tailwindcss/postcss": "^4.1.12",
     "next": "^15.5.0",
     "nextra": "^4.4.0",
@@ -23,8 +23,8 @@
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
-    "@bob-ui/eslint-config": "workspace:*",
-    "@bob-ui/typescript-config": "workspace:*",
+    "@bobs-ui/eslint-config": "workspace:*",
+    "@bobs-ui/typescript-config": "workspace:*",
     "@eslint/eslintrc": "^3.3.1",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",

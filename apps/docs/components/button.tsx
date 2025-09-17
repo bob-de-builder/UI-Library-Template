@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@bob-ui/ui';
+import { Button } from '@bobs-ui/ui';
 import { JSX } from 'react';
 
 export const SecondaryButton = (): JSX.Element => {

@@ -1,6 +1,6 @@
 'use client';
 
-import { Banner, Button } from '@bob-ui/ui';
+import { Banner, Button } from '@bobs-ui/ui';
 
 export const BannerComponent = () => {
   return (

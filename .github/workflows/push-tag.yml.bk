@@ -14,7 +14,7 @@ jobs:
       - uses: pnpm/action-setup@v4
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build --filter=@bob-ui/ui
+      - run: pnpm build --filter=@bobs-ui/ui
 
       - name: Configure Git user
         run: |
