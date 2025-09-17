@@ -1,0 +1,86 @@
+# Banner
+
+import { Tabs } from "nextra/components";
+import { BannerComponent } from "@/components/Banner";
+
+This component is designed to convey information specific to certain areas
+within the application.
+
+<br />
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+
+    <BannerComponent />
+
+  </Tabs.Tab>
+
+  <Tabs.Tab>
+    ```jsx copy
+     const BannerComponent = () => {
+  return (
+    <div className="flex flex-col gap-5">
+      <Banner
+        open
+        title="Info"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tool."
+        bottomNode={
+          <div className="flex gap-3 w-full mt-3">
+            <Button size="sm" variant="outlined">
+              Cancel
+            </Button>
+            <Button size="sm">Refetch</Button>
+          </div>
+        }
+      />
+      <Banner
+        open
+        title="Success"
+        type="success"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tool."
+      />
+      <Banner
+        open
+        title="Warning"
+        type="warning"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tool."
+      />
+      <Banner
+        open
+        title="Danger"
+        type="danger"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer tool."
+        sideNode={
+          <div className="flex gap-3">
+            <Button size="sm" variant="danger-outlined">
+              Cancel
+            </Button>
+            <Button size="sm" variant="danger">
+              Delete
+            </Button>
+          </div>
+        }
+      />
+    </div>
+  );
+}
+    ```
+
+  </Tabs.Tab>
+
+</Tabs>
+
+## Banner Props
+
+Props to can be used with the `Banner` component.
+
+| **Name**          | **Type**                                                 | **Default** | **Description**                                                                                       |
+| ----------------- | -------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `type`            | `'gray' \| 'info' \| 'warning' \| 'success' \| 'danger'` | `info`      | Determines the Banner component's color variation                                                     |
+| `title`           | `React.ReactNode`                                        | `''`        | shows the title of the Banner                                                                         |
+| `description`     | `React.ReactNode`                                        | `''`        | shows the subtext description of the Banner                                                           |
+| `showCloseButton` | `boolean`                                                | `false`     | shows the close button                                                                                |
+| `open`            | `bolean`                                                 | `true`      | shows or hide the entire component                                                                    |
+| `showIcon`        | `bolean`                                                 | `true`      | shows or hide top left icon                                                                           |
+| `bottomNode`      | `React.ReactNode`                                        | `null`      | ReactNode use to display components under the description                                             |
+| `sideNode`        | `React.ReactNode`                                        | `null`      | ReactNode use to display components beside the text block. This will become a column layout on mobile |

@@ -1,33 +1,31 @@
 @import "tailwindcss";
-@import 'nextra-theme-docs/style.css';
 
-
-:root {
+/*:root {
   --background: #ffffff;
   --foreground: #171717;
-  --purple-900: #1F0444;
-  --purple-800: #2B0660;
-  --purple-700: #410891;
-  --purple-600: #570BC1;
-  --purple-500: #600CD4;
-  --purple-400: #8A3EF4;
-  --purple-300: #A76EF7;
-  --purple-200: #C49FF9;
-  --purple-100: #E2CFFC;
-  --purple-50: #F0E7FE;
+  --primary-900: #032074;
+  --primary-800: #01289a;
+  --primary-700: #012ca7;
+  --primary-600: #0033c7;
+  --primary-500: #0033c7c3;
+  --primary-400: #0033c7b8;
+  --primary-300: #0033c799;
+  --primary-200: #0033c775;
+  --primary-100: #0033c736;
+  --primary-50: #0033c70a;
 
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;
   --color-secondary-200: #e2e8f0;
   --color-secondary-300: #cbd5e1;
   --color-secondary-400: #94a3b8;
-  --color-secondary-500: #F0AB20;
-  --color-secondary-600: #D69A1C;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
   --color-secondary-700: #334155;
   --color-secondary-800: #1e293b;
   --color-secondary-900: #0f172a;
   --color-secondary-950: #020617;
-}
+}*/
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
