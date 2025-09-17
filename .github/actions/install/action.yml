@@ -1,0 +1,25 @@
+name: Install dependencies
+description: Reusable install step with pnpm and cache
+inputs:
+  packages_token:
+    description: "Token for installing from GitHub Packages"
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: ".nvmrc"
+        cache: pnpm
+        always-auth: true
+        registry-url: "https://npm.pkg.github.com"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      shell: bash
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.packages_token }}
