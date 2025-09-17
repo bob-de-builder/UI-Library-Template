@@ -15,7 +15,6 @@ jobs:
         #   version: 9
       - run: pnpm install --frozen-lockfile
       - run: pnpm build --filter=ui
-      - run: pnpm changeset version
       - run: pnpm changeset publish
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
