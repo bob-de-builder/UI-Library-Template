@@ -1,7 +1,7 @@
 {
   "name": "@bob/ui",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "import": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
