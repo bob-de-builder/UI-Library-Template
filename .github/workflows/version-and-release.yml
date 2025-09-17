@@ -1,0 +1,40 @@
+name: Bump Version
+on:
+  push:
+    branches: [main]
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        uses: ./.github/actions/install
+        with:
+          packages_token: ${{ secrets.NPM_TOKEN }}
+
+      - run: pnpm build --filter=@bobs-ui/ui
+
+      - name: Configure Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Version packages
+        run: |
+         if pnpm changeset version | grep 'No unreleased changesets'; then
+            echo "✅ No changesets to version. Skipping..."
+            exit 0
+          fi
+          echo "🚀 Changesets found. Running version script..."
+          pnpm version
+
+      - name: Publish
+        run: pnpm changeset publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

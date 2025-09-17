@@ -1,4 +1,4 @@
-import "@bob/ui/dist/output.css";
+import "@bobs-ui/ui/dist/output.css";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import "nextra-theme-docs/style.css";
 import { Head } from "nextra/components";
