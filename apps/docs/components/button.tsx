@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { Button } from "@bob/ui";
-import { JSX } from "react";
+import { Button } from '@bob/ui';
+import { JSX } from 'react';
 
 export const SecondaryButton = (): JSX.Element => {
   return (
     <div className="">
       <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-3 my-1">
-          <Button size="sm" intent="secondary">
+          <Button intent="secondary" size="sm">
             Secondary sm
           </Button>
-          <Button size="md" isLoading intent="secondary">
+          <Button intent="secondary" isLoading size="md">
             Secondary md
           </Button>
-          <Button size="md" intent="secondary">
+          <Button intent="secondary" size="md">
             Secondary md
           </Button>
-          <Button size="lg" intent="secondary">
+          <Button intent="secondary" size="lg">
             Secondary lg
           </Button>
         </div>
@@ -30,16 +30,16 @@ export const PrimaryButton = (): JSX.Element => {
     <div className="">
       <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-3 my-1">
-          <Button size="sm" intent="primary">
+          <Button intent="primary" size="sm">
             Primary sm
           </Button>
-          <Button size="md" isLoading intent="primary">
+          <Button intent="primary" isLoading size="md">
             Primary md
           </Button>
-          <Button size="md" intent="primary">
+          <Button intent="primary" size="md">
             Primary md
           </Button>
-          <Button size="lg" intent="primary">
+          <Button intent="primary" size="lg">
             Primary lg
           </Button>
         </div>
@@ -53,16 +53,16 @@ export const OutlinedButton = (): JSX.Element => {
     <div className="">
       <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-3 my-1">
-          <Button size="sm" intent="outline">
+          <Button intent="outline" size="sm">
             Outlined sm
           </Button>
-          <Button size="md" isLoading intent="outline">
+          <Button intent="outline" isLoading size="md">
             Outlined md
           </Button>
-          <Button size="md" intent="outline">
+          <Button intent="outline" size="md">
             Outlined md
           </Button>
-          <Button size="lg" intent="outline">
+          <Button intent="outline" size="lg">
             Outlined lg
           </Button>
         </div>
@@ -76,16 +76,16 @@ export const DangerdButton = (): JSX.Element => {
     <div className="">
       <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-3 my-1">
-          <Button size="sm" intent="danger">
+          <Button intent="danger" size="sm">
             Danger sm
           </Button>
-          <Button size="md" isLoading intent="danger">
+          <Button intent="danger" isLoading size="md">
             Danger md
           </Button>
-          <Button size="md" intent="danger">
+          <Button intent="danger" size="md">
             Danger md
           </Button>
-          <Button size="lg" intent="danger">
+          <Button intent="danger" size="lg">
             Danger lg
           </Button>
         </div>

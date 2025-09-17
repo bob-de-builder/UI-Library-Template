@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface BannerTypes {
-  type?: "gray" | "info" | "warning" | "success" | "danger";
+  type?: 'gray' | 'info' | 'warning' | 'success' | 'danger';
 }
 
 interface BannerProps extends BannerTypes {
@@ -16,13 +16,13 @@ interface BannerProps extends BannerTypes {
 }
 
 const Icon = ({ type }: BannerTypes) => {
-  if (type === "gray") {
+  if (type === 'gray') {
     return (
       <svg
-        width="20"
+        fill="none"
         height="20"
         viewBox="0 0 20 20"
-        fill="none"
+        width="20"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -31,27 +31,27 @@ const Icon = ({ type }: BannerTypes) => {
         />
       </svg>
     );
-  } else if (type === "info") {
+  } else if (type === 'info') {
     return (
       <svg
-        stroke="#70B6F6"
         fill="#70B6F6"
+        height="24"
+        stroke="#70B6F6"
         strokeWidth="0"
         viewBox="0 0 16 16"
-        height="24"
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"></path>
       </svg>
     );
-  } else if (type === "warning") {
+  } else if (type === 'warning') {
     return (
       <svg
-        width="20"
+        fill="none"
         height="20"
         viewBox="0 0 20 20"
-        fill="none"
+        width="20"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -60,13 +60,13 @@ const Icon = ({ type }: BannerTypes) => {
         />
       </svg>
     );
-  } else if (type === "success") {
+  } else if (type === 'success') {
     return (
       <svg
-        width="24"
+        fill="none"
         height="24"
         viewBox="0 0 24 24"
-        fill="none"
+        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -78,10 +78,10 @@ const Icon = ({ type }: BannerTypes) => {
   } else {
     return (
       <svg
-        width="20"
+        fill="none"
         height="20"
         viewBox="0 0 20 20"
-        fill="none"
+        width="20"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -94,7 +94,7 @@ const Icon = ({ type }: BannerTypes) => {
 };
 
 export const Banner = ({
-  type = "info",
+  type = 'info',
   title,
   description,
   open,
@@ -110,32 +110,32 @@ export const Banner = ({
     setIsOpen(open);
   }, [open]);
 
-  let bgColor = "";
-  let stripeColor = "";
+  let bgColor = '';
+  let stripeColor = '';
   switch (type) {
-    case "gray":
-      bgColor = "#eeeef0";
-      stripeColor = "#79818c";
+    case 'gray':
+      bgColor = '#eeeef0';
+      stripeColor = '#79818c';
       break;
-    case "info":
-      bgColor = "#ebf5fd";
-      stripeColor = "#70B6F6";
+    case 'info':
+      bgColor = '#ebf5fd';
+      stripeColor = '#70B6F6';
       break;
-    case "warning":
-      bgColor = "#fff8df";
-      stripeColor = "#ffc700";
+    case 'warning':
+      bgColor = '#fff8df';
+      stripeColor = '#ffc700';
       break;
-    case "success":
-      bgColor = "#e0f9f0";
-      stripeColor = "#49e0aa";
+    case 'success':
+      bgColor = '#e0f9f0';
+      stripeColor = '#49e0aa';
       break;
-    case "danger":
-      bgColor = "#fde8e9";
-      stripeColor = "#f3777c";
+    case 'danger':
+      bgColor = '#fde8e9';
+      stripeColor = '#f3777c';
       break;
     default:
-      bgColor = "#eeeef0";
-      stripeColor = "#79818c";
+      bgColor = '#eeeef0';
+      stripeColor = '#79818c';
       break;
   }
 
@@ -154,13 +154,13 @@ export const Banner = ({
     <div
       className="w-full shadow-lg transform flex items-center rounded-md"
       style={{
-        background: bgColor || "#ebf5fd",
+        background: bgColor || '#ebf5fd',
       }}
     >
       <div
         className="flex-none absolute rounded-l-[2px] rounded-l-4px h-[4px] w-full top-0"
         style={{
-          background: stripeColor || "#70B6F6",
+          background: stripeColor || '#70B6F6',
         }}
       />
 
@@ -199,25 +199,25 @@ export const Banner = ({
           <div className="w-1/10 h-full flex flex-col justify-start items-center">
             <button onClick={handleClose}>
               <svg
-                width="16"
+                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
-                fill="none"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M3.3335 3.33337L12.6662 12.6661"
                   stroke="#191919"
-                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  strokeWidth="1.5"
                 />
                 <path
                   d="M3.33429 12.6661L12.667 3.33337"
                   stroke="#191919"
-                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  strokeWidth="1.5"
                 />
               </svg>
             </button>

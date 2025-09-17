@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Button, Code } from "@bob/ui";
-import { useState } from "react";
+import { Button, Code } from '@bob/ui';
+import { useState } from 'react';
 
 export default function WelcomePage() {
-  const [activeTab, setActiveTab] = useState<"install" | "local">("install");
-  const [packageManager, setPackageManager] = useState<"npm" | "pnpm" | "yarn">(
-    "npm",
+  const [activeTab, setActiveTab] = useState<'install' | 'local'>('install');
+  const [packageManager, setPackageManager] = useState<'npm' | 'pnpm' | 'yarn'>(
+    'npm',
   );
 
   return (
@@ -42,29 +42,29 @@ export default function WelcomePage() {
             {/* Tab Navigation */}
             <div className="flex mb-6 border-b border-gray-200">
               <button
-                onClick={() => setActiveTab("install")}
                 className={`px-4 py-2 font-medium text-sm border-b-2 transition-colors ${
-                  activeTab === "install"
-                    ? "border-primary text-primary"
-                    : "border-transparent text-gray-500 hover:text-gray-700"
+                  activeTab === 'install'
+                    ? 'border-primary text-primary'
+                    : 'border-transparent text-gray-500 hover:text-gray-700'
                 }`}
+                onClick={() => setActiveTab('install')}
               >
                 Install in Project
               </button>
               <button
-                onClick={() => setActiveTab("local")}
                 className={`px-4 py-2 font-medium text-sm border-b-2 transition-colors ${
-                  activeTab === "local"
-                    ? "border-primary text-primary"
-                    : "border-transparent text-gray-500 hover:text-gray-700"
+                  activeTab === 'local'
+                    ? 'border-primary text-primary'
+                    : 'border-transparent text-gray-500 hover:text-gray-700'
                 }`}
+                onClick={() => setActiveTab('local')}
               >
                 Local Development Setup
               </button>
             </div>
 
             {/* Tab Content */}
-            {activeTab === "install" && (
+            {activeTab === 'install' && (
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -76,42 +76,42 @@ export default function WelcomePage() {
                   <div className="mb-4">
                     <div className="flex mb-3 border-b border-gray-200">
                       <button
-                        onClick={() => setPackageManager("npm")}
                         className={`px-3 py-1 text-xs font-medium border-b-2 transition-colors ${
-                          packageManager === "npm"
-                            ? "border-primary text-primary"
-                            : "border-transparent text-gray-500 hover:text-gray-700"
+                          packageManager === 'npm'
+                            ? 'border-primary text-primary'
+                            : 'border-transparent text-gray-500 hover:text-gray-700'
                         }`}
+                        onClick={() => setPackageManager('npm')}
                       >
                         npm
                       </button>
                       <button
-                        onClick={() => setPackageManager("pnpm")}
                         className={`px-3 py-1 text-xs font-medium border-b-2 transition-colors ${
-                          packageManager === "pnpm"
-                            ? "border-primary text-primary"
-                            : "border-transparent text-gray-500 hover:text-gray-700"
+                          packageManager === 'pnpm'
+                            ? 'border-primary text-primary'
+                            : 'border-transparent text-gray-500 hover:text-gray-700'
                         }`}
+                        onClick={() => setPackageManager('pnpm')}
                       >
                         pnpm
                       </button>
                       <button
-                        onClick={() => setPackageManager("yarn")}
                         className={`px-3 py-1 text-xs font-medium border-b-2 transition-colors ${
-                          packageManager === "yarn"
-                            ? "border-primary text-primary"
-                            : "border-transparent text-gray-500 hover:text-gray-700"
+                          packageManager === 'yarn'
+                            ? 'border-primary text-primary'
+                            : 'border-transparent text-gray-500 hover:text-gray-700'
                         }`}
+                        onClick={() => setPackageManager('yarn')}
                       >
                         yarn
                       </button>
                     </div>
                     <Code language="bash">
-                      {packageManager === "npm"
-                        ? "npm install @bob/ui"
-                        : packageManager === "pnpm"
-                          ? "pnpm add @bob/ui"
-                          : "yarn add @bob/ui"}
+                      {packageManager === 'npm'
+                        ? 'npm install @bob/ui'
+                        : packageManager === 'pnpm'
+                          ? 'pnpm add @bob/ui'
+                          : 'yarn add @bob/ui'}
                     </Code>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function WelcomePage() {
                   </h3>
                   <p className="text-gray-600 mb-3">
                     Add the required purple and secondary CSS variables to your
-                    root CSS file or{" "}
+                    root CSS file or{' '}
                     <code className="bg-gray-100 px-2 py-1 rounded">
                       globals.css
                     </code>
@@ -193,7 +193,7 @@ function App() {
               </div>
             )}
 
-            {activeTab === "local" && (
+            {activeTab === 'local' && (
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -238,7 +238,7 @@ cd bob-ui`}
                     4. Install Tailwind CSS v4
                   </h3>
                   <p className="text-gray-600 mb-3">
-                    Install Tailwind CSS CLI in your app directory (e.g.,{" "}
+                    Install Tailwind CSS CLI in your app directory (e.g.,{' '}
                     <code className="bg-gray-100 px-2 py-1 rounded">
                       apps/docs
                     </code>

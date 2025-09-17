@@ -1,5 +1,6 @@
-import { Size } from "@/src/utils/types";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react';
+
+import { Size } from '@/src/utils/types';
 
 export type LoaderProps = {
   size?: Size;
@@ -7,17 +8,17 @@ export type LoaderProps = {
 };
 
 const sizeMap = {
-  sm: 16,
-  md: 24,
   lg: 32,
+  md: 24,
+  sm: 16,
 };
 
-export const Loader = ({ size = "md", text }: LoaderProps) => {
+export const Loader = ({ size = 'md', text }: LoaderProps) => {
   const iconSize = sizeMap[size];
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
-      <Loader2 size={iconSize} className="animate-spin" />
+      <Loader2 className="animate-spin" size={iconSize} />
       {text && <span className="text-sm text-gray-600">{text}</span>}
     </div>
   );

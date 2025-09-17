@@ -1,15 +1,17 @@
 // import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config = {
-  logo: <span>Hexa design system</span>,
-  project: {
-    link: "https://github.com/shuding/nextra-docs-template",
-  },
   // color: { hue: 44 },
   darkMode: false,
+
+  logo: <span>Hexa design system</span>,
+
   nextThemes: {
-    defaultTheme: "light",
-    forcedTheme: "light",
+    defaultTheme: 'light',
+    forcedTheme: 'light',
+  },
+  project: {
+    link: 'https://github.com/shuding/nextra-docs-template',
   },
 };
 
