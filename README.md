@@ -1,135 +1,223 @@
-# Turborepo starter
+# Turbo UI Library Monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern UI component library built with React, TypeScript, and Tailwind CSS, managed as a Turborepo monorepo.
 
-## Using this example
+## Project Overview
 
-Run the following command:
+This repository contains a comprehensive UI library ecosystem with:
 
-```sh
-npx create-turbo@latest
-```
+- **@bobs-ui/ui** - Core React component library with TypeScript and Tailwind CSS
+- **docs** - Documentation site built with Next.js and Nextra
+- Automated versioning and publishing with Changesets
+- GitHub Packages integration for private package distribution
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@bobs-ui/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@bobs-ui/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@bobs-ui/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## Repository Structure
 
 ```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+├── apps/
+│   └── docs/              # Documentation site (Next.js + Nextra)
+├── packages/
+│   ├── ui/                # Main UI component library
+│   ├── eslint-config/     # Shared ESLint configurations
+│   └── typescript-config/ # Shared TypeScript configurations
+├── .github/
+│   ├── workflows/         # CI/CD workflows
+│   └── actions/           # Reusable GitHub Actions
+├── .changeset/            # Changesets configuration
+└── .husky/                # Git hooks
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Key Directories
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+- **`packages/ui/`** - Main UI component library with React components, TypeScript definitions, and Tailwind styles
+- **`apps/docs/`** - Documentation and component showcase site
+- **`.github/workflows/`** - Automated CI/CD pipelines for testing, versioning, and publishing
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+## Getting Started
 
-### Develop
+### Prerequisites
 
-To develop all apps and packages, run the following command:
+- Node.js >= 18
+- pnpm 9.12.0 (specified in `packageManager`)
 
-```
-cd my-turborepo
+### Installation
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+```bash
+# Clone the repository
+git clone <repository-url>
+cd turbo-lib
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+# Install dependencies
+pnpm install
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Development
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+```bash
+# Start development servers for all apps
+pnpm dev
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+# Build all packages and apps
+pnpm build
 
-### Remote Caching
+# Run linting across all packages
+pnpm lint
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+# Fix linting issues
+pnpm lint:fix
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+# Format code
+pnpm format
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+# Type checking
+pnpm check-types
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### Working with the UI Library
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+```bash
+# Build only the UI package
+pnpm build --filter=@bobs-ui/ui
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+# Develop the UI package with hot reload
+cd packages/ui
+pnpm dev
 ```
 
-## Useful Links
+### Documentation Site
 
-Learn more about the power of Turborepo:
+```bash
+# Start the docs site
+cd apps/docs
+pnpm dev
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+# Build the docs site
+pnpm build
+```
+
+## Available Scripts
+
+### Root Level Scripts
+
+- `pnpm build` - Build all packages and applications
+- `pnpm dev` - Start development servers for all apps
+- `pnpm lint` - Run ESLint across all packages
+- `pnpm lint:fix` - Fix ESLint issues automatically
+- `pnpm format` - Format code with Prettier
+- `pnpm check-types` - Run TypeScript type checking
+- `pnpm version` - Version packages using Changesets
+
+### Package-Specific Scripts
+
+**UI Package (`packages/ui/`):**
+- `pnpm build` - Build the component library (ESM/CJS + CSS)
+- `pnpm dev` - Development mode with hot reload
+- `pnpm generate:component` - Generate new React component scaffolding
+
+**Documentation (`apps/docs/`):**
+- `pnpm dev` - Start Next.js development server on port 2025
+- `pnpm build` - Build the documentation site
+- `pnpm start` - Start production server
+
+## Usage in Other Projects
+
+### Authentication Setup
+
+1. **Generate a Personal Access Token (PAT)** from GitHub with `packages:read` scope
+2. **Configure package manager authentication:**
+
+   **For npm:**
+   ```bash
+   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .npmrc
+   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .npmrc
+   ```
+
+   **For yarn:**
+   ```bash
+   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .yarnrc
+   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .yarnrc
+   ```
+
+   **For pnpm:**
+   ```bash
+   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .npmrc
+   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .npmrc
+   # Or set environment variable
+   export NPM_TOKEN=YOUR_PAT_HERE
+   ```
+
+### Installation
+
+```bash
+npm install @bobs-ui/ui
+# or
+yarn add @bobs-ui/ui
+# or
+pnpm add @bobs-ui/ui
+```
+
+### Setup Requirements
+
+This library is built with **Tailwind CSS v4** and requires specific setup:
+
+1. **Import the CSS file** in your app's root (e.g., `layout.tsx`, `_app.tsx`, or `main.tsx`):
+   ```tsx
+   import '@bobs-ui/ui/dist/output.css'
+   ```
+
+2. **Add required CSS variables** to your global CSS file:
+   ```css
+   :root {
+     --background: #ffffff;
+     --foreground: #171717;
+     --purple-900: #1F0444;
+     --purple-800: #2B0660;
+     --purple-700: #410891;
+     --purple-600: #570BC1;
+     --purple-500: #600CD4;
+     --purple-400: #8A3EF4;
+     --purple-300: #A76EF7;
+     --purple-200: #C49FF9;
+     --purple-100: #E2CFFC;
+     --purple-50: #F0E7FE;
+
+     --color-secondary-50: #f8fafc;
+     --color-secondary-100: #f1f5f9;
+     --color-secondary-200: #e2e8f0;
+     --color-secondary-300: #cbd5e1;
+     --color-secondary-400: #94a3b8;
+     --color-secondary-500: #F0AB20;
+     --color-secondary-600: #D69A1C;
+     --color-secondary-700: #334155;
+     --color-secondary-800: #1e293b;
+     --color-secondary-900: #0f172a;
+     --color-secondary-950: #020617;
+   }
+   ```
+
+3. **Use components** in your project:
+   ```tsx
+   import { Button } from '@bobs-ui/ui'
+   
+   export default function App() {
+     return <Button>Click me</Button>
+   }
+   ```
+
+## Contributing
+
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed information about:
+
+- Development workflow
+- Pull request process
+- Publishing guidelines
+- Code standards and conventions
+
+## Architecture
+
+- **Turborepo** - Monorepo build system with intelligent caching
+- **pnpm** - Fast, disk space efficient package manager
+- **Changesets** - Versioning and changelog management
+- **GitHub Actions** - Automated CI/CD pipelines
+- **GitHub Packages** - Private package registry
+- **Husky** - Git hooks for code quality enforcement
