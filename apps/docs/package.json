@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack --port 2025",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint --max-warnings 0",
+    "lint": "eslint --max-warnings 0 .",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
@@ -24,10 +24,12 @@
   "devDependencies": {
     "@bob/eslint-config": "workspace:*",
     "@bob/typescript-config": "workspace:*",
+    "@eslint/eslintrc": "^3.3.1",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.3",
     "typescript": "5.9.2"
   }
 }
