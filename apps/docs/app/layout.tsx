@@ -1,12 +1,13 @@
-import "@bobs-ui/ui/dist/output.css";
-import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import "nextra-theme-docs/style.css";
-import { Head } from "nextra/components";
-import { getPageMap } from "nextra/page-map";
-import "./globals.css";
+import '@bobs-ui/ui/dist/output.css';
+import 'nextra-theme-docs/style.css';
+import './globals.css';
+
+import { Head } from 'nextra/components';
+import { getPageMap } from 'nextra/page-map';
+import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 
 export const metadata = {
-  title: "Bob-UI",
+  title: 'Bob-UI',
 };
 
 const navbar = (
@@ -25,11 +26,11 @@ export default async function RootLayout({
   return (
     <html
       // Not required, but good for SEO
-      lang="en"
-      // Required to be set
       dir="ltr"
-      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
+      // Required to be set
       suppressHydrationWarning
+      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
+      lang="en"
     >
       <Head
       // ... Your additional head options
@@ -38,19 +39,19 @@ export default async function RootLayout({
       </Head>
       <body>
         <Layout
+          darkMode={false}
+          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
           navbar={navbar}
+          nextThemes={{
+            defaultTheme: 'light',
+            forcedTheme: 'light',
+          }}
           pageMap={await getPageMap()}
           sidebar={{
             autoCollapse: false,
             defaultOpen: true,
             toggleButton: true,
           }}
-          darkMode={false}
-          nextThemes={{
-            defaultTheme: "light",
-            forcedTheme: "light",
-          }}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
           footer={footer}
           // ... Your additional layout options
         >

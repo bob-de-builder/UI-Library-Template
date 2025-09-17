@@ -110,11 +110,13 @@ pnpm build
 ### Package-Specific Scripts
 
 **UI Package (`packages/ui/`):**
+
 - `pnpm build` - Build the component library (ESM/CJS + CSS)
 - `pnpm dev` - Development mode with hot reload
 - `pnpm generate:component` - Generate new React component scaffolding
 
 **Documentation (`apps/docs/`):**
+
 - `pnpm dev` - Start Next.js development server on port 2025
 - `pnpm build` - Build the documentation site
 - `pnpm start` - Start production server
@@ -123,27 +125,35 @@ pnpm build
 
 ### Authentication Setup
 
+To install `@bobs-ui/ui` from GitHub Packages, you need to set up authentication:
+
 1. **Generate a Personal Access Token (PAT)** from GitHub with `packages:read` scope
-2. **Configure package manager authentication:**
-
-   **For npm:**
+2. **Set environment variable:**
    ```bash
-   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .npmrc
-   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .npmrc
-   ```
-
-   **For yarn:**
-   ```bash
-   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .yarnrc
-   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .yarnrc
-   ```
-
-   **For pnpm:**
-   ```bash
-   echo "@bobs-ui:registry=https://npm.pkg.github.com" >> .npmrc
-   echo "//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE" >> .npmrc
-   # Or set environment variable
    export NPM_TOKEN=YOUR_PAT_HERE
+   ```
+3. **Configure package manager authentication:**
+
+   **For npm/pnpm (.npmrc)** - see [.npmrc.dev](.npmrc.dev) for reference:
+
+   ```
+   @bobs-ui:registry=https://npm.pkg.github.com
+   //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+   ```
+
+   **For Yarn Berry (.yarnrc.yml)** - see [.yarnrc.yml.dev](.yarnrc.yml.dev) for reference:
+
+   ```yaml
+   injectEnvironmentFiles:
+     - .env
+
+   nodeLinker: node-modules
+
+   npmScopes:
+     bobs-ui:
+       npmAlwaysAuth: true
+       npmAuthToken: "${NPM_TOKEN}"
+       npmRegistryServer: "https://npm.pkg.github.com"
    ```
 
 ### Installation
@@ -161,33 +171,35 @@ pnpm add @bobs-ui/ui
 This library is built with **Tailwind CSS v4** and requires specific setup:
 
 1. **Import the CSS file** in your app's root (e.g., `layout.tsx`, `_app.tsx`, or `main.tsx`):
+
    ```tsx
-   import '@bobs-ui/ui/dist/output.css'
+   import "@bobs-ui/ui/dist/output.css";
    ```
 
 2. **Add required CSS variables** to your global CSS file:
+
    ```css
    :root {
      --background: #ffffff;
      --foreground: #171717;
-     --purple-900: #1F0444;
-     --purple-800: #2B0660;
+     --purple-900: #1f0444;
+     --purple-800: #2b0660;
      --purple-700: #410891;
-     --purple-600: #570BC1;
-     --purple-500: #600CD4;
-     --purple-400: #8A3EF4;
-     --purple-300: #A76EF7;
-     --purple-200: #C49FF9;
-     --purple-100: #E2CFFC;
-     --purple-50: #F0E7FE;
+     --purple-600: #570bc1;
+     --purple-500: #600cd4;
+     --purple-400: #8a3ef4;
+     --purple-300: #a76ef7;
+     --purple-200: #c49ff9;
+     --purple-100: #e2cffc;
+     --purple-50: #f0e7fe;
 
      --color-secondary-50: #f8fafc;
      --color-secondary-100: #f1f5f9;
      --color-secondary-200: #e2e8f0;
      --color-secondary-300: #cbd5e1;
      --color-secondary-400: #94a3b8;
-     --color-secondary-500: #F0AB20;
-     --color-secondary-600: #D69A1C;
+     --color-secondary-500: #f0ab20;
+     --color-secondary-600: #d69a1c;
      --color-secondary-700: #334155;
      --color-secondary-800: #1e293b;
      --color-secondary-900: #0f172a;
@@ -196,11 +208,12 @@ This library is built with **Tailwind CSS v4** and requires specific setup:
    ```
 
 3. **Use components** in your project:
+
    ```tsx
-   import { Button } from '@bobs-ui/ui'
-   
+   import { Button } from "@bobs-ui/ui";
+
    export default function App() {
-     return <Button>Click me</Button>
+     return <Button>Click me</Button>;
    }
    ```
 

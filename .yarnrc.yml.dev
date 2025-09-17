@@ -1,0 +1,11 @@
+# Requires Yarn version Berry and above
+injectEnvironmentFiles:
+  - .env
+
+nodeLinker: node-modules
+
+npmScopes:
+  bobs-ui:
+    npmAlwaysAuth: true
+    npmAuthToken: "${NPM_TOKEN}"
+    npmRegistryServer: "https://npm.pkg.github.com"
