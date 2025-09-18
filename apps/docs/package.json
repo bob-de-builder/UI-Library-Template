@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 2025",
-    "build": "next build --turbopack",
+    "postbuild": "npx pagefind --site out",
+    "build": "next build --turbopack && pnpm postbuild",
     "start": "next start",
     "lint": "tsc && eslint --max-warnings 0 components && prettier --check components",
     "lint:fix": "eslint --fix . && prettier --write components",
